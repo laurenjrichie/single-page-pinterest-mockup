@@ -6,17 +6,16 @@ $(document).ready(function() {
 
     event.preventDefault();
 
-    $.ajax("/images",
-      { type: 'post',
-        data: {
-          image: {
-            title: new_title,
-            url: new_url,
-            username: new_username,
-          }
+    $.ajax("/images", {
+      type: 'post',
+      data: {
+        image: {
+          title: new_title,
+          url: new_url,
+          username: new_username,
         }
       }
-    ).done(function(data) {
+    }).done(function(data) {
       $('#image_title').val('');
       $('#image_url').val('');
       $('#image_username').val('');
